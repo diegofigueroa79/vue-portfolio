@@ -15,6 +15,14 @@
 
     </v-app-bar>
 
+    <v-main>
+      <v-container>
+        <v-row>
+          <router-view></router-view>
+        </v-row>
+      </v-container>
+    </v-main>
+
   </v-app>
 </template>
 
