@@ -5,8 +5,9 @@
         <v-navigation-drawer
             app
             dark
-            v-model="drawer"
+            clipped
             src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
+            v-model="drawer"
         >
             <v-row class="justify-center">
                 <v-avatar size=150 class="mt-4">
@@ -53,9 +54,9 @@
 <script>
 export default {
     name: 'Navigation',
+    props: ['drawer'],
     data () {
         return {
-            drawer: true
         }
     }
 

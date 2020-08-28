@@ -1,7 +1,20 @@
 <template>
   <v-app>
-    <Navigation />
+    <Navigation v-bind:drawer="drawer" />
     
+    <v-app-bar
+      app
+      color="blue"
+      clipped-left
+      dark
+      flat
+    >
+      <v-app-bar-nav-icon v-on:click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-toolbar-title class="display-1">Vue Portfolio</v-toolbar-title>
+
+    </v-app-bar>
+
   </v-app>
 </template>
 
@@ -17,7 +30,7 @@ export default {
   },
 
   data: () => ({
-    //
+    drawer: true
   }),
 };
 </script>
