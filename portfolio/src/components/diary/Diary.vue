@@ -13,7 +13,7 @@
             </v-col>
             <v-spacer></v-spacer>
             <v-col class="yellow" cols=2>
-                <v-btn>Add <v-icon right>mdi-plus</v-icon> </v-btn>
+                <Entry>Add <v-icon right>mdi-plus</v-icon></Entry>
             </v-col>
         </v-row>
         <!-- entries row -->
@@ -24,11 +24,12 @@
                         <v-list-item
                             v-for="(entry, i) in entries"
                             :key="i"
-                            v-on:click.stop="1"
                         >
                             <v-list-item-content>
-                                <v-list-item-title v-text="entry.title">
-                                </v-list-item-title>
+                                <Entry active=true v-bind:entry="entry">
+                                    <v-list-item-title class="text-left" v-text="entry.title">
+                                    </v-list-item-title>
+                                </Entry>
                             </v-list-item-content>
                             <v-list-item-icon>
                                 <v-btn v-on:click.stop="1" icon><v-icon>mdi-delete</v-icon></v-btn>
@@ -38,13 +39,17 @@
                 </v-card>
             </v-col>
         </v-row>
-
     </v-col>
 </template>
 
 <script>
+import Entry from './Entry'
+
 export default {
     name: 'Diary',
+    components: {
+        Entry
+    },
     data: () => ({
             entries: [
                 {title: "First Entry", text: "I am crazy sad"},
