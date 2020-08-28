@@ -17,12 +17,40 @@
             </v-col>
         </v-row>
         <!-- entries row -->
+        <v-row>
+            <v-col>
+                <v-card>
+                    <v-list>
+                        <v-list-item
+                            v-for="(entry, i) in entries"
+                            :key="i"
+                            v-on:click.stop="1"
+                        >
+                            <v-list-item-content>
+                                <v-list-item-title v-text="entry.title">
+                                </v-list-item-title>
+                            </v-list-item-content>
+                            <v-list-item-icon>
+                                <v-btn v-on:click.stop="1" icon><v-icon>mdi-delete</v-icon></v-btn>
+                            </v-list-item-icon>
+                        </v-list-item>
+                    </v-list>
+                </v-card>
+            </v-col>
+        </v-row>
 
     </v-col>
 </template>
 
 <script>
 export default {
+    name: 'Diary',
+    data: () => ({
+            entries: [
+                {title: "First Entry", text: "I am crazy sad"},
+                {title: "Second Entry", text: "I am so sad"}
+            ]
+    })
 
 }
 </script>
