@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Navigation v-bind:drawer="drawer" />
+    <Navigation />
     
     <v-app-bar
       app
@@ -9,7 +9,7 @@
       dark
       flat
     >
-      <v-app-bar-nav-icon v-on:click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon v-on:click.stop="flipDrawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title class="display-1">Vue Portfolio</v-toolbar-title>
 
@@ -38,7 +38,12 @@ export default {
   },
 
   data: () => ({
-    drawer: true
   }),
+
+  methods: {
+    flipDrawer: function () {
+      this.$store.commit('flipDrawer')
+    }
+  }
 };
 </script>

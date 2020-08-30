@@ -7,7 +7,7 @@
             dark
             clipped
             src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
-            v-model="drawer"
+            v-model="getDrawer"
         >
             <v-row class="justify-center">
                 <v-avatar size=150 class="mt-4">
@@ -54,9 +54,19 @@
 <script>
 export default {
     name: 'Navigation',
-    props: ['drawer'],
     data () {
         return {
+            drawer: Boolean
+        }
+    },
+    computed: {
+        getDrawer: {
+            get: function () {
+                return this.$store.getters.getDrawer
+            },
+            set: function (newValue) {
+                this.drawer = newValue
+            }
         }
     }
 
