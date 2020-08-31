@@ -15,7 +15,9 @@ const actions = {
 }
 
 const mutations = {
-
+    addEntry: (state, payload) => {
+        state.entries.push(payload.newEntry)
+    }
 }
 
 export default {
