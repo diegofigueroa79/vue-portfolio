@@ -1,9 +1,13 @@
 const state = () => ({
-    test: 'Hello'
+    currentEntry: '',
+    entries: [
+        {title: "First Entry", text: "I am crazy sad"},
+        {title: "Second Entry", text: "I am so sad"}
+    ]
 })
 
 const getters = {
-
+    getEntries: state => state.entries
 }
 
 const actions = {

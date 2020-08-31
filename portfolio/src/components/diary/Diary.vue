@@ -22,11 +22,11 @@
                 <v-card>
                     <v-list>
                         <v-list-item
-                            v-for="(entry, i) in entries"
+                            v-for="(entry, i) in getEntries"
                             :key="i"
                         >
                             <v-list-item-content>
-                                <Entry active=true v-bind:entry="entry">
+                                <Entry v-bind:active="true" v-bind:entry="entry">
                                     <v-list-item-title class="text-left" v-text="entry.title">
                                     </v-list-item-title>
                                 </Entry>
@@ -51,11 +51,12 @@ export default {
         Entry
     },
     data: () => ({
-            entries: [
-                {title: "First Entry", text: "I am crazy sad"},
-                {title: "Second Entry", text: "I am so sad"}
-            ]
-    })
+    }),
+    computed: {
+        getEntries() {
+            return this.$store.getters['diary/getEntries']
+        }
+    }
 
 }
 </script>
