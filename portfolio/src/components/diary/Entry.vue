@@ -1,7 +1,9 @@
 <template>
     <v-dialog
         v-model="dialog"
-        width="500"
+        class="mx-auto"
+        width=500
+        persistent
     >
         <template v-slot:activator="{on, attrs}">
             <v-btn
@@ -16,10 +18,47 @@
             <template v-if="entry">
                 <v-card-title>{{ entry.title }}</v-card-title>
                 <v-card-text>{{ entry.text }}</v-card-text>
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                        color="blue darken-1"
+                        text
+                        @click="dialog=false"
+                    >close</v-btn>
+                </v-card-actions>
             </template>
             <template v-else>
-                <v-card-title>Test</v-card-title>
-                <v-card-text>test</v-card-text>
+                <v-card-title>
+                    <v-text-field 
+                        label="Entry Title"
+                        required
+                        v-model="currentEntry.title"
+                    ></v-text-field>
+                </v-card-title>
+                <v-card-text>
+                    <v-textarea
+                        filled
+                        label="Entry"
+                        required
+                        v-model="currentEntry.text"
+                    >
+                    </v-textarea>
+                </v-card-text>
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                        color="blue darken-1"
+                        text
+                        @click="dialog=false"
+                    >close</v-btn>
+                    <v-btn
+                        color="blue darken-1"
+                        text
+                        @click="addEntry"
+                    >
+                        add
+                    </v-btn>
+                </v-card-actions>
             </template>
         </v-card>
 
@@ -29,7 +68,23 @@
 <script>
 export default {
     name: 'Entry',
-    props: ['active', 'entry']
+    props: ['active', 'entry'],
+    data () {
+        return {
+            dialog: false,
+            currentEntry: {
+                title: '',
+                text: ''
+            }
+        }
+    },
+    methods: {
+        addEntry() {
+            this.$store.commit('diary/addEntry', {
+                newEntry: this.currentEntry
+            })
+        }
+    }
 }
 </script>
 
