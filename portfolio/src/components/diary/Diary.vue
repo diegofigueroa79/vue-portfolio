@@ -32,7 +32,7 @@
                                 </Entry>
                             </v-list-item-content>
                             <v-list-item-icon>
-                                <v-btn v-on:click.stop="1" icon><v-icon>mdi-delete</v-icon></v-btn>
+                                <v-btn v-on:click.stop="deleteEntry(i)" icon><v-icon>mdi-delete</v-icon></v-btn>
                             </v-list-item-icon>
                         </v-list-item>
                     </v-list>
@@ -55,6 +55,13 @@ export default {
     computed: {
         getEntries() {
             return this.$store.getters['diary/getEntries']
+        },
+    },
+    methods: {
+        deleteEntry(i) {
+            this.$store.commit('diary/deleteEntry', {
+                index: i
+            })
         }
     }
 
