@@ -26,26 +26,22 @@
             <v-col>
                 <v-card>
                     <v-list class="purple lighten-5">
-                        <template
-                            v-for="(entry, i) in getEntries"  
+                        <v-list-item
+                            v-for="(entry, i) in getEntries"
+                            :key="i"
                         >
-                            <v-divider :key="i+1" v-if="i > 0"></v-divider>
-                            <v-list-item
-                                :key="i"
-                            >
-                                <v-list-item-content>
-                                    <Entry v-bind:active="true" v-bind:entry="entry">
-                                        <v-list-item-title
-                                            class="text-left purple--text" 
-                                            v-text="entry.title">
-                                        </v-list-item-title>
-                                    </Entry>
-                                </v-list-item-content>
-                                <v-list-item-icon>
-                                    <v-btn v-on:click.stop="deleteEntry(i)" icon><v-icon>mdi-delete</v-icon></v-btn>
-                                </v-list-item-icon>
-                            </v-list-item>
-                        </template>
+                            <v-list-item-content>
+                                <Entry v-bind:active="true" v-bind:entry="entry">
+                                    <v-list-item-title
+                                        class="text-left purple--text" 
+                                        v-text="entry.title">
+                                    </v-list-item-title>
+                                </Entry>
+                            </v-list-item-content>
+                            <v-list-item-icon>
+                                <v-btn v-on:click.stop="deleteEntry(i)" icon><v-icon>mdi-delete</v-icon></v-btn>
+                            </v-list-item-icon>
+                        </v-list-item>
                     </v-list>
                 </v-card>
             </v-col>
