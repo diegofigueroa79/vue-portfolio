@@ -82,7 +82,8 @@ export default {
         addEntry() {
             this.$store.commit('diary/addEntry', {
                 newEntry: this.currentEntry
-            })
+            });
+            this.dialog = false;
         }
     }
 }
