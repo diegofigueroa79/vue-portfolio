@@ -43,6 +43,11 @@
               v-bind:to="project.url"
               :elevation="hover ? 12 : 2"
             >
+              <v-img
+                width=300
+                height=200
+                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+              ></v-img>
               <v-card-title>{{ project.title }}</v-card-title>
               <v-card-subtitle>{{ project.description }}</v-card-subtitle>
             </v-card>
