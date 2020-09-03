@@ -32,9 +32,20 @@
       </v-col>
     </v-row>
     <v-row>
-      <template v-for="(n, index) in 3">
+      <template v-for="(project, index) in projects">
         <v-col :key="index" class="white rounded-xl d-flex justify-center">
-          Hello
+          <v-hover v-slot:default="{ hover }">
+            <v-card
+              class="mx-auto"
+              max-width="400"
+              link
+              v-bind:to="project.url"
+              :elevation="hover ? 12 : 2"
+            >
+              <v-card-title>{{ project.title }}</v-card-title>
+              <v-card-subtitle>{{ project.description }}</v-card-subtitle>
+            </v-card>
+          </v-hover>
         </v-col>
       </template>
     </v-row>
@@ -46,7 +57,7 @@ export default {
     name: 'Home',
     data: () => ({
       projects: [
-        { title: '', description: '', link: ''}
+        { title: 'Diary', description: 'Simple app for logging your diary entries', url: '/diary/'}
       ]
     })
 }
