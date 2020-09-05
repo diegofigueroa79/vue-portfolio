@@ -69,7 +69,7 @@
 export default {
     name: 'Entry',
     props: ['active', 'entry'],
-    data () {
+    data: () => {
         return {
             dialog: false,
             currentEntry: {
@@ -84,6 +84,10 @@ export default {
                 newEntry: this.currentEntry
             });
             this.dialog = false;
+        },
+        clearEntries() {
+            this.currentEntry.title = '';
+            this.currentEntry.text = ''
         }
     }
 }

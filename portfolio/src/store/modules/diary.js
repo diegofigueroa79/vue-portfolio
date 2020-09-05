@@ -1,8 +1,7 @@
 const state = () => ({
-    currentEntry: '',
     entries: [
-        {title: "First Entry", text: "I am crazy sad"},
-        {title: "Second Entry", text: "I am so sad"}
+        {title: "First Entry", text: "I am writing"},
+        {title: "Second Entry", text: "I am stopping"}
     ]
 })
 

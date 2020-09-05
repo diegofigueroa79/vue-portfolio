@@ -11,7 +11,7 @@
     >
       <v-app-bar-nav-icon v-on:click.stop="flipDrawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title class="display-1">Vue Portfolio</v-toolbar-title>
+      <v-toolbar-title class="display-1">Vue</v-toolbar-title>
 
     </v-app-bar>
 

@@ -34,7 +34,8 @@
                                 <Entry v-bind:active="true" v-bind:entry="entry">
                                     <v-list-item-title
                                         class="text-left purple--text" 
-                                        v-text="entry.title">
+                                    >
+                                        {{ entry.title }}
                                     </v-list-item-title>
                                 </Entry>
                             </v-list-item-content>
