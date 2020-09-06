@@ -80,14 +80,14 @@ export default {
     },
     methods: {
         addEntry() {
+            let temp = {}
+            temp = Object.assign(temp, this.currentEntry)
+            this.currentEntry.title = ''
+            this.currentEntry.text = ''
             this.$store.commit('diary/addEntry', {
-                newEntry: this.currentEntry
+                newEntry: temp
             });
             this.dialog = false;
-        },
-        clearEntries() {
-            this.currentEntry.title = '';
-            this.currentEntry.text = ''
         }
     }
 }
