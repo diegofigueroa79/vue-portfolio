@@ -11,12 +11,16 @@
     >
       <v-app-bar-nav-icon v-on:click.stop="flipDrawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title class="display-1">Vue</v-toolbar-title>
+      <v-toolbar-title class="display-1">Vue Portfolio</v-toolbar-title>
 
     </v-app-bar>
 
     <v-main class="blue lighten-5">
       <v-container>
+        <v-row>
+          <v-icon>mdi-home</v-icon>
+          <v-breadcrumbs v-bind:items="crumbs" large></v-breadcrumbs>
+        </v-row>
         <v-row>
           <router-view></router-view>
         </v-row>
@@ -38,6 +42,9 @@ export default {
   },
 
   data: () => ({
+    crumbs: [
+      { text: 'Home', disabled: false, href: '/'}
+    ]
   }),
 
   methods: {
