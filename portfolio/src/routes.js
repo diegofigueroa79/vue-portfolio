@@ -7,8 +7,11 @@ import Diary from './components/diary/Diary'
 Vue.use(VueRouter)
 
 export const router = new VueRouter({
+    // base is for deployment
+    // comment it out when developing
+    base: '/vue-portfolio/',
     routes: [
-        { path: '/vue-portfolio/', component: Home },
+        { path: '', component: Home },
         { path: '/diary/', component: Diary }
     ]
 })
