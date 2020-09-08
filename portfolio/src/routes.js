@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 
 export const router = new VueRouter({
     routes: [
-        { path: 'https://diegofigueroa79.github.io/vue-portfolio/', component: Home },
+        { path: '', component: Home },
         { path: '/diary/', component: Diary }
     ]
 })
