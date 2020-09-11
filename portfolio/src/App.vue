@@ -43,7 +43,7 @@ export default {
 
   data: () => ({
     crumbs: [
-      { text: 'Home', disabled: false, href: '/'}
+      { text: 'Home', disabled: false, to: '/'}
     ]
   }),
 
