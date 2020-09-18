@@ -4,7 +4,7 @@
             <v-col class="blue" cols=4>
                 <v-row>
                     <v-col class="yellow mx-3">
-                        Numbers
+                        {{value}}
                     </v-col>
                 </v-row>
                 <v-row>
@@ -45,7 +45,7 @@
 export default {
     name: 'Caluclator',
     data: () => ({
-        
+        value: 'Numbers'
     })
 }
 </script>
