@@ -14,25 +14,25 @@
                     <v-col class="white ml-1 mr-3 mt-2">/</v-col>
                 </v-row>
                 <v-row>
-                    <v-col class="yellow ml-3 mr-1 mt-2">7</v-col>
-                    <v-col class="red mx-1 mt-2">8</v-col>
-                    <v-col class="green mx-1 mt-2">9</v-col>
+                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('7')">7</v-col>
+                    <v-col class="red mx-1 mt-2" @click="aggregate('8')">8</v-col>
+                    <v-col class="green mx-1 mt-2" @click="aggregate('9')">9</v-col>
                     <v-col class="white ml-1 mr-3 mt-2">X</v-col>
                 </v-row>
                 <v-row>
-                    <v-col class="yellow ml-3 mr-1 mt-2">4</v-col>
-                    <v-col class="red mx-1 mt-2">5</v-col>
-                    <v-col class="green mx-1 mt-2">6</v-col>
+                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('4')">4</v-col>
+                    <v-col class="red mx-1 mt-2" @click="aggregate('5')">5</v-col>
+                    <v-col class="green mx-1 mt-2" @click="aggregate('6')">6</v-col>
                     <v-col class="white ml-1 mr-3 mt-2">-</v-col>
                 </v-row>
                 <v-row>
-                    <v-col class="yellow ml-3 mr-1 mt-2">1</v-col>
-                    <v-col class="red mx-1 mt-2">2</v-col>
-                    <v-col class="green mx-1 mt-2">3</v-col>
+                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('1')">1</v-col>
+                    <v-col class="red mx-1 mt-2" @click="aggregate('2')">2</v-col>
+                    <v-col class="green mx-1 mt-2" @click="aggregate('3')">3</v-col>
                     <v-col class="white ml-1 mr-3 mt-2">+</v-col>
                 </v-row>
                 <v-row>
-                    <v-col class="yellow ml-3 mr-1 mt-2">0</v-col>
+                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('0')">0</v-col>
                     <v-col class="green mx-1 mt-2">.</v-col>
                     <v-col class="white ml-1 mr-3 mt-2">=</v-col>
                 </v-row>
@@ -55,6 +55,14 @@ export default {
             if( this.current != '0'){
                 this.current = this.current.charAt(0) === '-' ?
                     this.current.slice(1) : `-${this.current}`;
+            }
+        },
+        aggregate(buttonValue) {
+            if(this.current === '0'){
+                this.current = buttonValue;
+            }
+            else {
+                this.current += buttonValue;
             }
         }
     }
