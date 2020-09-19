@@ -4,12 +4,12 @@
             <v-col class="blue" cols=4>
                 <v-row>
                     <v-col class="yellow mx-3">
-                        {{value}}
+                        {{current}}
                     </v-col>
                 </v-row>
                 <v-row>
-                    <v-col class="yellow ml-3 mr-1 mt-2">C</v-col>
-                    <v-col class="red mx-1 mt-2">+/-</v-col>
+                    <v-col class="yellow ml-3 mr-1 mt-2" @click="clear">C</v-col>
+                    <v-col class="red mx-1 mt-2" @click="sign">+/-</v-col>
                     <v-col class="green mx-1 mt-2">%</v-col>
                     <v-col class="white ml-1 mr-3 mt-2">/</v-col>
                 </v-row>
@@ -45,8 +45,19 @@
 export default {
     name: 'Caluclator',
     data: () => ({
-        value: 'Numbers'
-    })
+        current: 'Numbers'
+    }),
+    methods: {
+        clear() {
+            this.current = '0';
+        },
+        sign() {
+            if( this.current != '0'){
+                this.current = this.current.charAt(0) === '-' ?
+                    this.current.slice(1) : `-${this.current}`;
+            }
+        }
+    }
 }
 </script>
 
