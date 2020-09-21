@@ -29,12 +29,12 @@
                     <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('1')">1</v-col>
                     <v-col class="red mx-1 mt-2" @click="aggregate('2')">2</v-col>
                     <v-col class="green mx-1 mt-2" @click="aggregate('3')">3</v-col>
-                    <v-col class="white ml-1 mr-3 mt-2">+</v-col>
+                    <v-col class="white ml-1 mr-3 mt-2" @click="add">+</v-col>
                 </v-row>
                 <v-row>
                     <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('0')">0</v-col>
                     <v-col class="green mx-1 mt-2">.</v-col>
-                    <v-col class="white ml-1 mr-3 mt-2">=</v-col>
+                    <v-col class="white ml-1 mr-3 mt-2" @click="equals">=</v-col>
                 </v-row>
             </v-col>
         </v-row>
@@ -45,11 +45,15 @@
 export default {
     name: 'Caluclator',
     data: () => ({
-        current: 'Numbers'
+        current: 'Numbers',
+        num: 0,
+        operator: null,
+        operatorClicked: false
     }),
     methods: {
         clear() {
             this.current = '0';
+            this.num = 0;
         },
         sign() {
             if( this.current != '0'){
@@ -59,11 +63,21 @@ export default {
         },
         aggregate(buttonValue) {
             if(this.current === '0'){
-                this.current = buttonValue;
+                    this.current = buttonValue;
             }
             else {
                 this.current += buttonValue;
             }
+        },
+        add() {
+            this.operator = (a, b) => a + b;
+            this.operatorClicked = true;
+            this.num += parseFloat(this.current)
+            this.current = '0'
+        },
+        equals() {
+            let result = this.operator(this.num, parseFloat(this.current))
+            this.current = parseFloat(result);
         }
     }
 }
