@@ -11,19 +11,19 @@
                     <v-col class="yellow ml-3 mr-1 mt-2" @click="clear">C</v-col>
                     <v-col class="red mx-1 mt-2" @click="sign">+/-</v-col>
                     <v-col class="green mx-1 mt-2">%</v-col>
-                    <v-col class="white ml-1 mr-3 mt-2">/</v-col>
+                    <v-col class="white ml-1 mr-3 mt-2" @click="divide">/</v-col>
                 </v-row>
                 <v-row>
                     <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('7')">7</v-col>
                     <v-col class="red mx-1 mt-2" @click="aggregate('8')">8</v-col>
                     <v-col class="green mx-1 mt-2" @click="aggregate('9')">9</v-col>
-                    <v-col class="white ml-1 mr-3 mt-2">X</v-col>
+                    <v-col class="white ml-1 mr-3 mt-2" @click="multiply">X</v-col>
                 </v-row>
                 <v-row>
                     <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('4')">4</v-col>
                     <v-col class="red mx-1 mt-2" @click="aggregate('5')">5</v-col>
                     <v-col class="green mx-1 mt-2" @click="aggregate('6')">6</v-col>
-                    <v-col class="white ml-1 mr-3 mt-2">-</v-col>
+                    <v-col class="white ml-1 mr-3 mt-2" @click="subtract">-</v-col>
                 </v-row>
                 <v-row>
                     <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('1')">1</v-col>
@@ -73,6 +73,24 @@ export default {
             this.operator = (a, b) => a + b;
             this.operatorClicked = true;
             this.num += parseFloat(this.current)
+            this.current = '0'
+        },
+        subtract() {
+            this.operator = (a, b) => a - b;
+            this.operatorClicked = true;
+            this.num -= parseFloat(this.current)
+            this.current = '0'
+        },
+        multiply() {
+            this.operator = (a, b) => a * b;
+            this.operatorClicked = true;
+            this.num = parseFloat(this.current)
+            this.current = '0'
+        },
+        divide() {
+            this.operator = (a, b) => a / b;
+            this.operatorClicked = true;
+            this.num = parseFloat(this.current)
             this.current = '0'
         },
         equals() {
