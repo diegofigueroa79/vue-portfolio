@@ -33,7 +33,7 @@
                 </v-row>
                 <v-row>
                     <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('0')">0</v-col>
-                    <v-col class="green mx-1 mt-2">.</v-col>
+                    <v-col class="green mx-1 mt-2" @click="dot">.</v-col>
                     <v-col class="white ml-1 mr-3 mt-2" @click="equals">=</v-col>
                 </v-row>
             </v-col>
@@ -67,6 +67,11 @@ export default {
             }
             else {
                 this.current += buttonValue;
+            }
+        },
+        dot() {
+            if(this.current.indexOf('.') === -1){
+                this.current += '.'
             }
         },
         add() {
