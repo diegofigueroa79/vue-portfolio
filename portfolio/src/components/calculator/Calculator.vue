@@ -8,33 +8,33 @@
                     </v-col>
                 </v-row>
                 <v-row>
-                    <v-col class="yellow ml-3 mr-1 mt-2" @click="clear">C</v-col>
-                    <v-col class="red mx-1 mt-2" @click="sign">+/-</v-col>
-                    <v-col class="green mx-1 mt-2">%</v-col>
-                    <v-col class="white ml-1 mr-3 mt-2" @click="divide">/</v-col>
+                    <v-col class="yellow ml-3 mr-1 mt-2" @click="clear"><v-btn large>C</v-btn></v-col>
+                    <v-col class="red mx-1 mt-2" @click="sign"><v-btn>+/-</v-btn></v-col>
+                    <v-col class="green mx-1 mt-2"><v-btn>%</v-btn></v-col>
+                    <v-col class="white ml-1 mr-3 mt-2" @click="divide"><v-btn>/</v-btn></v-col>
                 </v-row>
                 <v-row>
-                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('7')">7</v-col>
-                    <v-col class="red mx-1 mt-2" @click="aggregate('8')">8</v-col>
-                    <v-col class="green mx-1 mt-2" @click="aggregate('9')">9</v-col>
-                    <v-col class="white ml-1 mr-3 mt-2" @click="multiply">X</v-col>
+                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('7')"><v-btn>7</v-btn></v-col>
+                    <v-col class="red mx-1 mt-2" @click="aggregate('8')"><v-btn>8</v-btn></v-col>
+                    <v-col class="green mx-1 mt-2" @click="aggregate('9')"><v-btn>9</v-btn></v-col>
+                    <v-col class="white ml-1 mr-3 mt-2" @click="multiply"><v-btn>X</v-btn></v-col>
                 </v-row>
                 <v-row>
-                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('4')">4</v-col>
-                    <v-col class="red mx-1 mt-2" @click="aggregate('5')">5</v-col>
-                    <v-col class="green mx-1 mt-2" @click="aggregate('6')">6</v-col>
-                    <v-col class="white ml-1 mr-3 mt-2" @click="subtract">-</v-col>
+                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('4')"><v-btn>4</v-btn></v-col>
+                    <v-col class="red mx-1 mt-2" @click="aggregate('5')"><v-btn>5</v-btn></v-col>
+                    <v-col class="green mx-1 mt-2" @click="aggregate('6')"><v-btn>6</v-btn></v-col>
+                    <v-col class="white ml-1 mr-3 mt-2" @click="subtract"><v-btn>-</v-btn></v-col>
                 </v-row>
                 <v-row>
-                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('1')">1</v-col>
-                    <v-col class="red mx-1 mt-2" @click="aggregate('2')">2</v-col>
-                    <v-col class="green mx-1 mt-2" @click="aggregate('3')">3</v-col>
-                    <v-col class="white ml-1 mr-3 mt-2" @click="add">+</v-col>
+                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('1')"><v-btn>1</v-btn></v-col>
+                    <v-col class="red mx-1 mt-2" @click="aggregate('2')"><v-btn>2</v-btn></v-col>
+                    <v-col class="green mx-1 mt-2" @click="aggregate('3')"><v-btn>3</v-btn></v-col>
+                    <v-col class="white ml-1 mr-3 mt-2" @click="add"><v-btn>+</v-btn></v-col>
                 </v-row>
                 <v-row>
-                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('0')">0</v-col>
-                    <v-col class="green mx-1 mt-2" @click="dot">.</v-col>
-                    <v-col class="white ml-1 mr-3 mt-2" @click="equals">=</v-col>
+                    <v-col class="yellow ml-3 mr-1 mt-2" @click="aggregate('0')"><v-btn>0</v-btn></v-col>
+                    <v-col class="green mx-1 mt-2" @click="dot"><v-btn>.</v-btn></v-col>
+                    <v-col class="white ml-1 mr-3 mt-2" @click="equals"><v-btn>=</v-btn></v-col>
                 </v-row>
             </v-col>
         </v-row>
