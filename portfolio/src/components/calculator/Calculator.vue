@@ -46,14 +46,14 @@ export default {
     name: 'Caluclator',
     data: () => ({
         current: 'Numbers',
-        num: 0,
+        previous: '',
         operator: null,
         operatorClicked: false
     }),
     methods: {
         clear() {
             this.current = '0';
-            this.num = 0;
+            this.previous = '';
         },
         sign() {
             if( this.current != '0'){
@@ -62,6 +62,10 @@ export default {
             }
         },
         aggregate(buttonValue) {
+            if(this.operatorClicked === true){
+                this.current = '';
+                this.operatorClicked = false;
+            }
             if(this.current === '0'){
                     this.current = buttonValue;
             }
@@ -74,33 +78,29 @@ export default {
                 this.current += '.'
             }
         },
+        setPrevious() {
+            this.previous = this.current;
+            this.operatorClicked = true;
+        },
         add() {
             this.operator = (a, b) => a + b;
-            this.operatorClicked = true;
-            this.num += parseFloat(this.current)
-            this.current = '0'
+            this.setPrevious();
         },
         subtract() {
             this.operator = (a, b) => a - b;
-            this.operatorClicked = true;
-            this.num -= parseFloat(this.current)
-            this.current = '0'
+            this.setPrevious();
         },
         multiply() {
             this.operator = (a, b) => a * b;
-            this.operatorClicked = true;
-            this.num = parseFloat(this.current)
-            this.current = '0'
+            this.setPrevious();
         },
         divide() {
             this.operator = (a, b) => a / b;
-            this.operatorClicked = true;
-            this.num = parseFloat(this.current)
-            this.current = '0'
+            this.setPrevious();
         },
         equals() {
-            let result = this.operator(this.num, parseFloat(this.current))
-            this.current = parseFloat(result);
+            let result = this.operator(parseFloat(this.previous), parseFloat(this.current))
+            this.current = `${result}`;
         }
     }
 }
