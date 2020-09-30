@@ -10,7 +10,7 @@
                 <v-row>
                     <v-col class="ml-3 pr-1 mr-0 mt-2" @click="clear"><v-btn class="grey lighten-2 font-weight-black" large>C</v-btn></v-col>
                     <v-col class="mx-0 px-1 mt-2" @click="sign"><v-btn class="grey lighten-2 font-weight-black" large>+/-</v-btn></v-col>
-                    <v-col class="mx-0 px-1 mt-2"><v-btn class="grey lighten-2 font-weight-black" large>%</v-btn></v-col>
+                    <v-col class="mx-0 px-1 mt-2" @click="percent"><v-btn class="grey lighten-2 font-weight-black" large>%</v-btn></v-col>
                     <v-col class="ml-0 pl-1 mr-3 mt-2" @click="divide"><v-btn class="grey lighten-2 font-weight-black" large>/</v-btn></v-col>
                 </v-row>
                 <v-row>
@@ -85,6 +85,9 @@ export default {
             if(this.current.indexOf('.') === -1){
                 this.current += '.'
             }
+        },
+        percent() {
+            this.current = `${parseFloat(this.current)/100}`
         },
         setPrevious() {
             this.previous = this.current;
