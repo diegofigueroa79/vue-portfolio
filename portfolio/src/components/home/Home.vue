@@ -34,7 +34,7 @@
     </v-row>
     <v-row>
       <template v-for="(project, index) in projects">
-        <v-col :key="index" class="d-flex justify-center">
+        <v-col :key="index" class="d-flex justify-center mt-12">
           <v-hover v-slot:default="{ hover }">
             <v-card
               class="mx-auto"
@@ -63,7 +63,8 @@ export default {
     name: 'Home',
     data: () => ({
       projects: [
-        { title: 'Diary', description: 'Simple app for logging your diary entries', url: '/diary/'}
+        { title: 'Diary', description: 'Simple app for logging your diary entries', url: '/diary/'},
+        { title: 'Calculator', description: 'Simple calculator app', url: '/calculator/'}
       ]
     })
 }
