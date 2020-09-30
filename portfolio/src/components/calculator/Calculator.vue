@@ -3,7 +3,7 @@
         <v-row justify="center">
             <v-col class="blue-grey rounded" cols=auto>
                 <v-row>
-                    <v-col class="amber blue-grey--text rounded mx-3 display-1">
+                    <v-col class="amber blue-grey--text rounded mx-6 mt-2 display-1 d-flex justify-end">
                         {{current}}
                     </v-col>
                 </v-row>
@@ -33,8 +33,16 @@
                 </v-row>
                 <v-row>
                     <v-col class="ml-3 pr-1 mr-0 mt-0 pt-0" @click="aggregate('0')"><v-btn class="grey lighten-2 font-weight-black" large>0</v-btn></v-col>
-                    <v-col class="mx-1 mt-0 pt-0" @click="dot"><v-btn class="grey lighten-2 font-weight-black" large>.</v-btn></v-col>
-                    <v-col class="ml-0 pl-1 mr-3 mt-0 pt-0" @click="equals"><v-btn class="grey lighten-2 font-weight-black" large>=</v-btn></v-col>
+                    <v-col class="mx-0 px-1 mt-0 pt-0" @click="dot"><v-btn class="grey lighten-2 font-weight-black" large>.</v-btn></v-col>
+                    <v-col class="mx-0 px-1 mt-0 pt-0" @click="equals"><v-btn class="grey lighten-2 font-weight-black" large>=</v-btn></v-col>
+                    <v-col class="ml-0 pl-1 mr-3 mt-0 pt-0 d-flex justify-center">
+                        <v-img
+                            contain
+                            height="50"
+                            width="50"
+                            src="../../assets/logo.png"
+                        ></v-img>
+                    </v-col>
                 </v-row>
             </v-col>
         </v-row>
@@ -45,7 +53,7 @@
 export default {
     name: 'Caluclator',
     data: () => ({
-        current: 'Numbers',
+        current: '0',
         previous: '',
         operator: null,
         operatorClicked: false
