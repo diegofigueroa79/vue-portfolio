@@ -46,7 +46,7 @@
               <v-img
                 width=300
                 height=200
-                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                v-bind:src="project.img"
               ></v-img>
               <v-card-title>{{ project.title }}</v-card-title>
               <v-card-subtitle>{{ project.description }}</v-card-subtitle>
@@ -63,8 +63,8 @@ export default {
     name: 'Home',
     data: () => ({
       projects: [
-        { title: 'Diary', description: 'Simple app for logging your diary entries', url: '/diary/'},
-        { title: 'Calculator', description: 'Simple calculator app', url: '/calculator/'}
+        { title: 'Diary', description: 'Simple app for logging your diary entries', url: '/diary/', img: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg'},
+        { title: 'Calculator', description: 'Simple calculator app', url: '/calculator/', img: 'https://cdn.vuetifyjs.com/images/cards/server-room.jpg'}
       ]
     })
 }
